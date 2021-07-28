@@ -48,7 +48,7 @@ function question2() {
         case 'no':
         case 'n':
 
-            consle.log('that is not true', Edishs)
+            //consle.log('that is not true', Edishs)
             alert('not right , i love exotic dishes')
             break;
     }
@@ -97,32 +97,30 @@ function qusetion4() {
     }
 }
 qusetion4();
-
 function qusetion5() {
     let guessMonth = prompt('Now try to guess my fav month of the year, you have just four chances');
-
     for (let i = 0; i < 3; i++) {
-        if (guessMonth === 4) {
+        if (Number(guessMonth) === 4) {
             alert('  you are guessed the month ')
             score++;
-            //console.log(guessMonth)
-
+            //console.log(guessMonth) 
             break;
         }
-        else if (guessMonth < 4) {
-            alert('too low');
-            console.log(guessMonth);
-        } else if (guessNumber > 4) {
-            alert('too high');
-            //console.log(guessMonth);
-
-
-            alert('The correct number is four')
+        else if (Number(guessMonth) < 4) {
+            guessMonth = prompt('too low, try another one ');
+            console.log(guessMonth + "low ");  
+        }
+        else {
+            guessMonth = prompt('too high, try another one ' );
+           console.log(guessMonth + " high");   
         }
     }
-    qusetion5();
+    alert('The correct number is four')
+}
+qusetion5();
 
-    function qusetion6() {
+
+    function abc() {
         let Favsport = ['swimming', 'football', 'climbing', 'walking'];
 
         let whatMyFavsport = prompt(' Now try to guess my favorite sport, note  you have just 6 attempts');
@@ -136,11 +134,12 @@ function qusetion5() {
                 break;
             }
             else if (whatMyFavsport !== 'football' || whatMyFavsport !== 'swimming' || whatMyFavsport !== 'climbing' || whatMyFavsport !== 'walking') {
-                alert(' Unfortunately ,this is not my  favorite sport, try again');
+                whatMyFavsport=prompt(' Unfortunately ,this is not my  favorite sport, try again');
             }
         }
     }
-}
-qusetion6();
+
+abc();
 
 alert('you got' + score + '/7');
+alert('Thank you for joinig my website , i hope you have fun ^-^')
